@@ -1,0 +1,144 @@
+		/*Phone*/
+@media only screen and (orientation: portrait) and (max-device-width: 767px){
+	:root {
+		--card_width: 100%;
+		--description_font_size: 3rem;
+		--title_font_size: 4rem;
+	}
+	nav {
+		justify-content: flex-end;
+		& > a {
+			display: none;
+		}
+	}
+}
+
+		/*Tablet*/
+@media only screen and (orientation: portrait) and (min-device-width: 768px) and (max-device-width: 960px){
+	:root {
+		--card_width: 48%;
+		--description_font_size: 1.5rem;
+		--title_font_size: 2rem;
+	}
+	nav {
+		justify-content: space-between;
+	}
+}
+
+		/*PC*/
+@media screen and (min-width: 992px){
+	:root {
+		--card_width: 23%;
+		--description_font_size: 0.8rem;
+		--title_font_size: 1.2rem;
+	}
+	nav {
+		justify-content: space-between;
+	}
+}
+
+body {
+	margin: 0px;
+	background-color: #040404;
+}
+
+nav {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(35, 31, 32, 0.3));
+	padding: 10px;
+	transition: .3s;
+
+	& > :hover{
+		stroke: cornsilk;
+		stroke-width: 2px;
+		fill: cornsilk;
+		color: cornsilk;
+		border-color: rgba(200, 200, 255, 0.5);
+		transition: inherit;
+	}
+
+	& > a{
+		font-family: sans-serif;
+		font-size: large;
+		font-weight: bold;
+		color: lightblue;
+		text-decoration: none;
+	}
+
+	& > button{
+		color: lightblue;
+		padding: 14px 32px;
+		text-align: center;
+		font-size: large;
+		font-weight: bold;
+		margin: 4px 2px;
+		cursor: default;
+	}
+}
+
+main{
+	padding: 10px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+}
+
+article {			/* Card */
+	font-family: sans-serif;
+	text-align: center;
+	position: relative;
+	width: var(--card_width);
+	margin: 6px;
+	border-color: #002130;
+	border-style: solid;
+	border-radius: 0.4rem;
+	border: solid;
+	border-color: cornsilk;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition: .3s;
+	
+	& > img {
+		border-top-left-radius: inherit;
+		border-top-right-radius: inherit;
+		max-width: 100%;
+	}
+	& > h1 {		/* Name/Title */
+		font-size: var(--title_font_size);
+/*		padding: 4px;*/
+		color: cornsilk;
+	}
+	& > p {			/* Description */
+		font-size: var(--description_font_size);
+		padding: 4px;
+		color: whitesmoke;
+	}
+
+	& > button {	/* Button */
+		padding: 0.5rem;
+		width: 100%;
+		border-bottom-left-radius: inherit;
+		border-bottom-right-radius: inherit;
+		border: 0;
+		background-color: darkblue;
+		font-size: var(--title_font_size);
+		font-family: sans-serif;
+		color: lightskyblue;
+
+		&:hover {
+			background-color: blue;
+			color: whitesmoke;
+		}
+	}
+
+	&:hover {
+		background-color: #0B0C3D;
+		border-color: rgba(200, 200, 255, 0.5);
+		transition: inherit;
+	}
+
+	&:focused {
+		background-color: darkblue;
+	}
+}
